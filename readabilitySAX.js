@@ -11,7 +11,8 @@
 ;(function(global){
 
 //1. the tree element
-var Element = function(tagName, parent){
+var Element = function(tagName, parent, origEl){
+    this.origEl = origEl;
 	this.name = tagName;
 	this.parent = parent;
 	this.attributes = {};
@@ -371,11 +372,11 @@ Readability.prototype._scanLink = function(elem){
 };
 
 //parser methods
-Readability.prototype.onopentagname = function(name){
+Readability.prototype.onopentagname = function(name, origEl){
 	if(name in noContent){
 		if(name in formatTags) this._currentElement.children.push(formatTags[name]);
 	}
-	else this._currentElement = new Element(name, this._currentElement);
+	else this._currentElement = new Element(name, this._currentElement, origEl);
 };
 
 Readability.prototype.onattribute = function(name, value){
