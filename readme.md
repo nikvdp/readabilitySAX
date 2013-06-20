@@ -2,6 +2,9 @@
 a fast and platform independent readability port
 
 ##About
+#### This fork
+NikV: Only modification is passing through of the origianl DOM item in the browser version. 
+
 This is a port of the algorithm used by the [Readability](http://code.google.com/p/arc90labs-readability/) bookmarklet to extract relevant pieces of information out of websites to a SAX parser.
 
 The advantage over other ports, e.g. [arrix/node-readability](https://github.com/arrix/node-readability), is a smaller memory footprint and a much faster execution. In my tests, most pages, even large ones, were finished within 15ms (on node, see below for more information). It works with Rhino, so it runs on [YQL](http://developer.yahoo.com/yql "Yahoo! Query Language"), which may have interesting uses. And it works within a browser.
